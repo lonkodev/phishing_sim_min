@@ -1,0 +1,52 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Panel de simulación</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0b1220;color:#e2e8f0;padding:24px}
+    h1{margin-bottom:16px}
+    table{width:100%;border-collapse:collapse;background:#0f172a;border-radius:12px;overflow:hidden}
+    th,td{padding:10px 12px;border-bottom:1px solid #1f2a44;font-size:14px;vertical-align:top}
+    th{background:#16203a;text-align:left}
+    tr:hover td{background:#0f1a33}
+    .muted{color:#94a3b8}
+    .tag{display:inline-block;padding:2px 8px;border-radius:999px;background:#1e293b;border:1px solid #334155;font-size:12px}
+  </style>
+</head>
+<body>
+  <h1>Panel de simulación (capturas locales)</h1>
+  <p class="muted">Muestra lo que un atacante <em>vería</em> en una prueba académica (inputs + metadatos expuestos).</p>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Usuario</th>
+        <th>“Contraseña”</th>
+        <th>User-Agent</th>
+        <th>IP</th>
+        <th>Cookie</th>
+        <th>Fecha (UTC)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in rows %}
+      <tr>
+        <td>{{ r[0] }}</td>
+        <td>{{ r[1] }}</td>
+        <td>{{ r[2] }}</td>
+        <td><span class="tag">{{ r[3] }}</span></td>
+        <td>{{ r[4] }}</td>
+        <td>{{ r[5] }}</td>
+        <td class="muted">{{ r[6] }}</td>
+      </tr>
+      {% endfor %}
+      {% if rows|length == 0 %}
+      <tr><td colspan="7" class="muted">Sin registros aún. Usa el formulario simulado en <a href="/">/</a>.</td></tr>
+      {% endif %}
+    </tbody>
+  </table>
+</body>
+</html>

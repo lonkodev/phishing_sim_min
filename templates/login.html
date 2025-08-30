@@ -1,0 +1,32 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portal Académico – Inicio de sesión</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:#0f172a;color:#e2e8f0;display:flex;min-height:100vh;align-items:center;justify-content:center}
+    .card{background:#1e293b;border:1px solid #334155;border-radius:16px;padding:28px;max-width:380px;width:100%;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+    h1{font-weight:700;margin:0 0 12px;font-size:20px}
+    label{display:block;margin-top:14px;font-size:14px}
+    input{width:100%;padding:10px 12px;border-radius:10px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;margin-top:6px}
+    button{margin-top:18px;width:100%;padding:10px 14px;border-radius:12px;border:0;background:#3b82f6;color:#fff;font-weight:700;cursor:pointer}
+    .muted{font-size:12px;color:#94a3b8;margin-top:12px}
+  </style>
+</head>
+<body>
+  <form class="card" method="POST" action="/capture">
+    <h1>Portal Académico</h1>
+    <p class="muted">Simulación académica – No usar credenciales reales.</p>
+    <label>Usuario
+      <input type="text" name="username" required placeholder="tu.usuario">
+    </label>
+    <label>Contraseña
+      <input type="password" name="password" required placeholder="••••••••">
+    </label>
+    <button type="submit">Ingresar</button>
+    <p class="muted">Al enviar, se guardará localmente lo que escribas (SQLite) para fines demostrativos.</p>
+  </form>
+</body>
+</html>
